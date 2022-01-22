@@ -1,0 +1,78 @@
+1A: 
+created function to take an input and convert to list format that is easy to work with
+
+created function to create string for output given output config
+
+conditions need to be made to process process config
+
+function for movement of block needs to be made
+- method 1: iterate and process each movement individually
+- method 2: in process config, the pattern would be 
+    - [x/NA/4 , Z , x/NA , Z , x/NA/3/4 , 0]
+    - where x is the sum of movements leading to location of crane ending position
+        - each movement doesnt have to be iterated and updated on the crane, the sum will conclude in the same position
+    - where Z is a block of [3 , x , 4]
+
+As each value needs to be calculated regardless, processing each movement one by one is fine
+
+1B:
+find difference between both lists
+
+Method 1:
+take the largest neg value
+move that largest positive value
+
+Method 2:
+The following pattern is true no matter what point of the code with the exception of the end if sum of input boxes doesnt equal sum of output boxes
+---------------------------------
+move to the closest none zero
+pick up
+move to the closest oppsite sign
+drop
+
+move to the closest none zero
+pick up
+move to the closest oppsite sign
+drop
+
+move to the closest none zero
+pick up
+move to the closest oppsite sign
+drop
+--------------------------------
+
+
+1C:
+use dict to pair index and value and randomize index?
+
+use list of random int as index values for each item in input config
+make new list of random int in range from 0 to length of input config
+
+
+
+2. Create a GUI and User Interface
+
+
+
+For the GUI
+Used the tkinter Python module
+Function to create a grid GUI to represent the locations of boxes
+- Input a list containing the stacks of boxes (either an input or output stack)
+- Display a grey/orange box depending on wether a box exists
+    - nested loops that iterate and create an array of boxes
+        - if a box exists the output is orange
+        - if a box does not exist the output is grey
+    - Boxes are dictated by the logic: (stack_height + height_level - 4) > 0
+        - The logic seems "upside down" due to tkinter counting "top to bottom"
+    - The size of the boxes is dependent on the total stacks of boxes
+
+
+
+PROGRAM BUGS
+- for 1B, if sum of input boxes does not equal sum of output boxes, program will get stuck in infinite loops
+    - could be be fixed by checking for steady state of [diff] list(list that shows the difference between output and input config). 
+    after finding where the inifinte loop occurs, fix the loop so that it doesnt change [diff] for the next iterations. 
+    steady state could be checked by creating a copy of diff(prev) and comparing after the iteration is complete. 
+    once steady state conditions are met, appending the movement to the loc of the box and lifting would solve the issue
+    - additionally, another fix, but much longer code would be a if statement before any iterations and check for ineqaulity between the two sets
+    depending on 
