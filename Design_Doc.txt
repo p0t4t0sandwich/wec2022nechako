@@ -75,4 +75,3 @@ PROGRAM BUGS
     steady state could be checked by creating a copy of diff(prev) and comparing after the iteration is complete. 
     once steady state conditions are met, appending the movement to the loc of the box and lifting would solve the issue
     - additionally, another fix, but much longer code would be a if statement before any iterations and check for ineqaulity between the two sets
-    depending on 
