@@ -9,4 +9,4 @@ Run "Main.py" to initiate the program.
 
 NOTE: When running the program, close any GUI windows before continuing.
 
-Any additional user prompts will be in the program
+Any additional user prompts will be in the program.
